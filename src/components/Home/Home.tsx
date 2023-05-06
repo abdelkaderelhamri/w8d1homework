@@ -1,13 +1,15 @@
 import React from 'react';
+
 import { styled } from '@mui/system';
 import { Button } from '@mui/material';
-import car_image from '../../assets/images/sample_car_image.avif';
+import drone_image from '../../assets/images/sample_drone.avif';
 import { Link } from 'react-router-dom';
+import { link } from 'fs';
 
-interface Props{
+interface Props {
     title: string;
 }
-// Create Styled Components with styled-components
+/// Create Styled Components with styled-components
 const Root = styled("div")({
     padding: 0,
     margin: 0
@@ -39,7 +41,7 @@ const NavA = styled(Link)({
     color: 'black'
 })
 const Main = styled('main')( {
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${car_image});`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${drone_image});`,
     width: '100%',
     height: '100%',
     backgroundSize: 'cover',
@@ -56,6 +58,7 @@ const MainText = styled('div')({
     color: 'white'
 })
 export const Home = ( props:Props) => {
+ 
     return (
         <Root>
             <NavbarContainer>
@@ -72,13 +75,16 @@ export const Home = ( props:Props) => {
                     <li>
                          <NavA to='/signin'>Sign In</NavA>
                     </li>
+                    <li>
+                         <NavA to='/signin'>Sign Up</NavA>
+                    </li>
                 </LogoNavigation>
             </NavbarContainer>
             <Main>
                 <MainText>
                     <h1>{props.title}</h1>
-                    <p> cars are cool!</p>
-                    <Button color='primary' variant='contained' component={Link} to='/dashboard'>See the Cool Cars you have been missing...</Button>
+                    <p> Drones are fly...dawg</p>
+                    <Button color='primary' variant='contained' component={Link} to='/dashboard'>See the Drones</Button>
                 </MainText>
             </Main>
 
